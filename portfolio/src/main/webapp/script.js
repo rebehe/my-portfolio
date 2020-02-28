@@ -16,13 +16,21 @@
  * Adds a random greeting to the page.
  */
 function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+  const michaelScottQuotes =
+      ['“Sometimes I’ll start a sentence and I don’t even know where it’s going. I just hope I find it along the way.”',
+       '“I’m not superstitious, but I am a little stitious.”',
+       '“Would I rather be feared or loved? Easy. Both. I want people to be afraid of how much they love me.”',
+       '“You know what they say. Fool me once, strike one, but fool me twice … strike three.”',
+       '“Well, well, well, how the turntables.”',
+       '“I love inside jokes. I’d love to be a part of one someday.”',
+       '“Wikipedia is the best thing ever. Anyone in the world can write anything they want about any subject. So you know you are getting the best possible information.”',
+       '“Well, it’s love at first sight. Actually, it was … No, it was when I heard her voice. It was love at first see with my ears.”',
+       '“Okay, too many different words from coming at me from too many different sentences.”'];
 
   // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+  const michaelScottQuote = michaelScottQuotes[Math.floor(Math.random() * michaelScottQuotes.length)];
 
   // Add it to the page.
   const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+  greetingContainer.innerText = michaelScottQuote;
 }

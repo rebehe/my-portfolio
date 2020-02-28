@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="getRandomQuote()">
     <div id="content">
       <h1>Rebecca He's Portfolio</h1>
+
+      <h4 id="quote-container">Loading quote...</h4>
 
       <h3>Work</h3>
 
@@ -46,10 +48,6 @@
       <p>My parents immigrated to the United States before I was born. I have a younger brother who is in college. My grandma
           lives with my family in Maryland (where I'm from).</p>
       <img src="/images/family.jpg"/>
-
-      <h3>Michael Scott Quote of the Day</h3>
-      <button onclick="addRandomGreeting()">Generate Quote</button>
-      <div id="greeting-container"></div>
     </div>
   </body>
 </html>

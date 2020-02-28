@@ -4,10 +4,12 @@
   width: 650px;
 }
 
-#greeting-container {
-  margin-top: 20px;
+#quote-container {
+  color: gray;
+  font-family: cursive;
+  font-style: italic;
 }
 
 img {
-      max-width: 100%;
+  max-width: 100%;
 }

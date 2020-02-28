@@ -12,25 +12,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
-function addRandomGreeting() {
-  const michaelScottQuotes =
-      ['“Sometimes I’ll start a sentence and I don’t even know where it’s going. I just hope I find it along the way.”',
-       '“I’m not superstitious, but I am a little stitious.”',
-       '“Would I rather be feared or loved? Easy. Both. I want people to be afraid of how much they love me.”',
-       '“You know what they say. Fool me once, strike one, but fool me twice … strike three.”',
-       '“Well, well, well, how the turntables.”',
-       '“I love inside jokes. I’d love to be a part of one someday.”',
-       '“Wikipedia is the best thing ever. Anyone in the world can write anything they want about any subject. So you know you are getting the best possible information.”',
-       '“Well, it’s love at first sight. Actually, it was … No, it was when I heard her voice. It was love at first see with my ears.”',
-       '“Okay, too many different words from coming at me from too many different sentences.”'];
+  const INSPIRATIONAL_QUOTES =
+      ['“No one can make you feel inferior without your consent.” -Eleanor Roosevelt',
+       '“Every time you are tempted to react in the same old way, ask yourself if you want to be a prisoner of the past or a pioneer of the future.” -Deepak Chopra',
+       '“To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment." -Ralph Waldo Emerson',
+       '“The most common way people give up their power is by thinking they don\'t have any.” -Alice Walker',
+       '“Never let success get to your head and never let failure get to your heart.” -Ziad K. Abdelnour',
+       '“Brave, not perfect.” -Reshma Saujani',
+       '“You are perfect as you are and there is always room for improvement.” -Shunryu Suzuki',
+       '“The most important thing is to enjoy your life--to be happy--it\'s all that matters.” -Audrey Hepburn',
+       '“Courage doesn\'t always roar. Sometimes courage is the little voice at the end of the day that says I\'ll try again tomorrow. -Mary Anne Radmacher',
+       '"I have learned that as long as I hold fast to my beliefs and values – and follow my own moral compass – then the only expectations I need to live up to are my own." -Michelle Obama',
+       '"You may not control all the events that happen to you, but you can decide not to be reduced by them." -Maya Angelou',
+       '"You can love someone and still choose to say goodbye to them. You can miss a person every day, and still be glad that they are no longer in your life." -Tara Westover'];
 
-  // Pick a random greeting.
-  const michaelScottQuote = michaelScottQuotes[Math.floor(Math.random() * michaelScottQuotes.length)];
+/**
+ * Adds a random inspirational quote to the page.
+ */
+function getRandomQuote() {
+  // Pick a random quote.
+  const quote = INSPIRATIONAL_QUOTES[Math.floor(Math.random() * INSPIRATIONAL_QUOTES.length)];
 
   // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = michaelScottQuote;
+  const quoteContainer = document.getElementById('quote-container');
+  quoteContainer.innerText = quote;
 }

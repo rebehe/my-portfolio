@@ -12,28 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-  const INSPIRATIONAL_QUOTES =
-      ['“No one can make you feel inferior without your consent.” -Eleanor Roosevelt',
-       '“Every time you are tempted to react in the same old way, ask yourself if you want to be a prisoner of the past or a pioneer of the future.” -Deepak Chopra',
-       '“To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment." -Ralph Waldo Emerson',
-       '“The most common way people give up their power is by thinking they don\'t have any.” -Alice Walker',
-       '“Never let success get to your head and never let failure get to your heart.” -Ziad K. Abdelnour',
-       '“Brave, not perfect.” -Reshma Saujani',
-       '“You are perfect as you are and there is always room for improvement.” -Shunryu Suzuki',
-       '“The most important thing is to enjoy your life--to be happy--it\'s all that matters.” -Audrey Hepburn',
-       '“Courage doesn\'t always roar. Sometimes courage is the little voice at the end of the day that says I\'ll try again tomorrow. -Mary Anne Radmacher',
-       '"I have learned that as long as I hold fast to my beliefs and values – and follow my own moral compass – then the only expectations I need to live up to are my own." -Michelle Obama',
-       '"You may not control all the events that happen to you, but you can decide not to be reduced by them." -Maya Angelou',
-       '"You can love someone and still choose to say goodbye to them. You can miss a person every day, and still be glad that they are no longer in your life." -Tara Westover'];
-
 /**
  * Adds a random inspirational quote to the page.
  */
 function getRandomQuote() {
-  // Pick a random quote.
-  const quote = INSPIRATIONAL_QUOTES[Math.floor(Math.random() * INSPIRATIONAL_QUOTES.length)];
-
-  // Add it to the page.
-  const quoteContainer = document.getElementById('quote-container');
-  quoteContainer.innerText = quote;
+  fetch('/data')
+    .then(response => response.text())
+    .then((quote) => {
+      document.getElementById('quote-container').innerText = quote;
+    });
 }

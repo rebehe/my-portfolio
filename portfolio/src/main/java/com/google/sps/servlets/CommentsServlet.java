@@ -18,9 +18,6 @@ public class CommentsServlet extends HttpServlet {
   @Override
   public void init() {
     comments = new ArrayList<>();
-    comments.add("Comment #1");
-    comments.add("Comment #2");
-    comments.add("Comment #3");
   }
 
   @Override
@@ -32,5 +29,18 @@ public class CommentsServlet extends HttpServlet {
     // Send the JSON as the response
     response.setContentType("application/json;");
     response.getWriter().println(json);
+  }
+
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    // Get comment input from data form.
+    String comment = request.getParameter("comment-input");
+
+    if (!comment.isEmpty()) {
+      comments.add(comment);
+    }
+
+    // Redirect back to the HTML page.
+    response.sendRedirect("/index.html");
   }
 }

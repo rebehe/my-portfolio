@@ -16,7 +16,7 @@
  * Adds a random inspirational quote to the page.
  */
 function getRandomQuote() {
-  fetch('/quote')
+  fetch('/quotes')
     .then(response => response.text())
     .then((quote) => {
       document.getElementById('quote-container').innerText = quote;

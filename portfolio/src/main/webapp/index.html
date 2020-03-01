@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body onload="getRandomQuote()">
+  <body onload="getRandomQuote(); getComments();">
     <div id="content">
       <h1>Rebecca He's Portfolio</h1>
 
@@ -26,7 +26,6 @@
 
       <p>When I'm not coding, I'm leading a Women in Firebase Book Club, mentoring awesome students through this amazing program called
           SPS, and planning cultural events for the Asian Googler Network.</p>
-      <img src="/images/agn_lny.jpg"/>
 
       <h3>Hobbies</h3>
 
@@ -48,6 +47,10 @@
       <p>My parents immigrated to the United States before I was born. I have a younger brother who is in college. My grandma
           lives with my family in Maryland (where I'm from).</p>
       <img src="/images/family.jpg"/>
+
+      <h3>Comments</h3>
+
+      <ul id="comments-list"></ul>
     </div>
   </body>
 </html>

@@ -9,25 +9,25 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Servlet that returns some example content. TODO: modify this file to handle comments data */
+/** Servlet that returns some example comments. */
 @WebServlet("/comments")
 public class CommentsServlet extends HttpServlet {
 
-  private List<String> data;
+  private List<String> comments;
 
   @Override
   public void init() {
-    data = new ArrayList<>();
-    data.add("Rebecca");
-    data.add("He");
-    data.add("Google Software Engineer");
+    comments = new ArrayList<>();
+    comments.add("Comment #1");
+    comments.add("Comment #2");
+    comments.add("Comment #3");
   }
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    // Convert data to JSON
+    // Convert comments to JSON
     Gson gson = new Gson();
-    String json = gson.toJson(data);
+    String json = gson.toJson(comments);
 
     // Send the JSON as the response
     response.setContentType("application/json;");

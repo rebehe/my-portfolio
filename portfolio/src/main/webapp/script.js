@@ -22,3 +22,30 @@ function getRandomQuote() {
       document.getElementById('quote-container').innerText = quote;
     });
 }
+
+/**
+ * Gets comments from server as JSON and adds them to the comments
+ * section of the page.
+ */
+function getComments() {
+    fetch('/comments')
+      .then(response => response.json())
+      .then(comments => {
+          // For debugging purposes
+          console.log(comments);
+
+          const commentsListElement = document.getElementById('comments-list');
+          commentsListElement.innerHTML = '';
+          comments.forEach(comment => {
+            var listElement = createListElement(comment);
+            commentsListElement.appendChild(listElement);
+          });
+      });
+}
+
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}
